@@ -1,0 +1,22 @@
+name: Pull Request Build
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Create PDF File
+      run: |
+        sudo apt-get -y --no-install-recommends install texlive-latex-base
+        pdflatex NabeelSuliemanCV.tex
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: NabeelSuliemanCV.pdf
+        path: ./NabeelSuliemanCV.pdf

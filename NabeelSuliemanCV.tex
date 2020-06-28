@@ -1,0 +1,110 @@
+\documentclass{res} 
+
+\newsectionwidth{0pt}  % So the text is not indented under section headings
+\usepackage{fancyhdr}  % use this package to get a 2 line header
+\usepackage{verbatim}  % use this package to get a 2 line header
+\renewcommand{\headrulewidth}{0pt} % suppress line drawn by default by fancyhdr
+\setlength{\headheight}{24pt} % allow room for 2-line header
+\setlength{\headsep}{24pt}  % space between header and text
+\setlength{\headheight}{24pt} % allow room for 2-line header
+\pagestyle{fancy}     % set pagestyle for document
+\rhead{} % put text in header (right side)
+\cfoot{} % the foot is empty
+\topmargin=-0.5in % start text higher on the page
+
+\newenvironment{packed_itemize}{
+\begin{itemize}
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+  \setlength{\topsep}{0in}
+  \setlength{\partopsep}{0in}
+  \setlength{\parskip}{0.0ex}
+}{\end{itemize}}
+
+\begin{document}
+\thispagestyle{empty} % this page has no header  
+\name{Nabeel Sulieman}
+
+\begin{resume}
+
++1-111-111-1111 \hfill 
+demo@test.com \hfill 
+nabeel.dev \hfill
+github.com/nabsul
+
+\section{\centerline{PROFESSIONAL EXPERIENCE}}
+\vspace{8pt} % provide vertical space between section title and contents
+
+{\bf Senior Software Engineer} \hfill 
+Automattic Inc. \hfill
+Bellevue, USA \hfill 
+{\em November 2015 - November 2018}
+
+\begin{packed_itemize}
+\item {\bf WooCommerce Data \& Business Intelligence:} Analytics and infrastructure  \hfill {\em woocommerce.com} \\\
+-- Developed internal metrics, dashboards, and research projects for design, support and marketing
+\item {\bf WooCommerce Hosted Services:} E-Commerce platform \hfill {\em woocommerce.com/connect} \\\
+-- Developed box-packing algorithms, payment processing, support tools and storage solutions \\\
+-- Implemented logging and analytics using Slack, StatsD, Grafana, LogStash and Hadoop \\\
+-- Managed customer support, service health monitoring, deployments and code quality
+\item {\bf European Data Privacy Law Compliance:} \hfill {\em gdprwp.org / eugdpr.org} \\\
+-- Worked with legal team and WordPress open-source community on GDPR compliance \\\
+-- Built WooCommerce data compliance tools and integration with WordPress.com infrastructure
+\item {\bf WooCommerce Store:} Maintenance and development \hfill {\em woocommerce.com} \\\
+-- Developed payment reporting tools for third party partners and subscription auto-renewal system \\\
+-- Built Docker-based development environment and setup linting, unit test and CI tools
+\item {\bf WooCommerce Extensions:} Plugin development and maintenance \hfill {\em woocommerce.com/extensions} \\\
+-- Support and feature development of 100+ extensions providing various e-commerce add-on features
+\end{packed_itemize}
+
+
+{\bf Test Program Engineer} \hfill 
+Qimonda \hfill
+Munich, Germany \hfill 
+{\em February - December 2008}
+
+\begin{packed_itemize}
+\item Developed and maintained test programs for verifying PC memory modules after production
+\item Took over DDR3 test program and enabled several advanced features and module variations
+\item Lead several code restructuring projects and established software release processes
+\item Developed several automation tools that reduced errors and program deployment failures
+\end{packed_itemize}
+
+\section{\centerline{SKILLS \& EXPERIENCE}} 
+\vspace{8pt} 
+
+{\bf Programming:}
+C\#, 
+NodeJS,
+Java,
+PHP,
+Go,
+PowerShell,
+SQL (MySQL/Impala/Hive),
+HTML/JS/CSS.
+\vspace{1mm} \\
+{\bf Frameworks:}
+Spring,
+MVC Core,
+HapiJS,
+WordPress,
+WooCommerce,
+VueJS, 
+Yii.
+\vspace{1mm} \\
+{\bf Data \& Cloud:}
+MariaDB/MySQL,
+Hadoop (HDFS, Hive, Impala, Workflows),
+Azure (Storage, Analytics, CosmosDB, Cognitive Services),
+Amazon AWS (S3, SES, DynamoDB),
+Kubernetes.
+
+\section{\centerline{EDUCATION}} 
+\vspace{8pt} 
+
+{\bf B.E. in Computer and Communications Engineering, minor in Philosophy} \hfill {\it June 2005} \\
+American University of Beirut, Lebanon.
+
+\end{resume} 
+\end{document}

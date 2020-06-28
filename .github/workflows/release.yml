@@ -1,0 +1,37 @@
+name: Release
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Create PDF File
+      run: |
+        sudo apt-get -y --no-install-recommends install texlive-latex-base
+        pdflatex NabeelSuliemanCV.tex
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1.1.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: release-${{ github.run_number }}
+        release_name: Release ${{ github.run_number }}
+        body: Release of the PDF file
+
+    - name: Upload PDF File
+      uses: actions/upload-release-asset@v1.0.2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./NabeelSuliemanCV.pdf
+        asset_name: NabeelSuliemanCV.pdf
+        asset_content_type: application/pdf
